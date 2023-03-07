@@ -25,5 +25,4 @@ packages:
       - rsync
       - dosfstools
       - lsof
-      - live-add-yast-repos
       - zypper-needs-restarting

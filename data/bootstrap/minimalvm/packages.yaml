@@ -1,5 +1,5 @@
 packages:
-  _namespace_bootstrap:
+  _namespace_bootstrap_minimal:
     package:
       - filesystem
       - glibc-locale-base

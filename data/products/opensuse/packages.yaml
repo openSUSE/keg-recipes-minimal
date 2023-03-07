@@ -1,0 +1,4 @@
+packages:
+  _namespace_opensuse_common:
+    package:
+      - live-add-yast-repos

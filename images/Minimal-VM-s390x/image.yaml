@@ -25,10 +25,16 @@ image:
           description: Minimal Image for Cloud
       - _attributes:
           name: dasd
-          description: Minimal Image for ZSystems
+          description: Minimal Image for ZSystems on DASD
       - _attributes:
           name: dasd-Cloud
-          description: Minimal Image for Cloud on DASD
+          description: Minimal Image for ZSystems Cloud on DASD
+      - _attributes:
+          name: fba
+          description: Minimal Image for ZSystems on FBA
+      - _attributes:
+          name: fba-Cloud
+          description: Minimal Image for ZSystems Cloud on FBA
   preferences:
     - _attributes:
         profiles: kvm
@@ -49,7 +55,18 @@ image:
         profiles: dasd-Cloud
       _include:
         - base/bootloader/grub2/arch/s390x
+        - base/suse/minimalvm-s390/fba
+        - base/suse/minimalvm-s390/cloud
+    - _attributes:
+        profiles: fba
+      _include:
+        - base/bootloader/grub2/arch/s390x
         - base/suse/minimalvm-s390/dasd
+    - _attributes:
+        profiles: fba-Cloud
+      _include:
+        - base/bootloader/grub2/arch/s390x
+        - base/suse/minimalvm-s390/fba
         - base/suse/minimalvm-s390/cloud
   packages:
     - _attributes:
@@ -59,24 +76,24 @@ image:
         - base/opensuse/minimalvm
     - _attributes:
         type: image
-        profiles: [kvm, dasd]
+        profiles: [kvm, dasd, fba]
       _include:
         - base/filesystem/btrfs
         - base/initial-config/jeos-firstboot
         - base/network/firewalld
     - _attributes:
         type: image
-        profiles: [kvm, dasd]
+        profiles: [kvm, dasd, fba]
       _include:
         - base/network/NetworkManager
     - _attributes:
         type: image
-        profiles: [kvm, Cloud]
+        profiles: [kvm, Cloud, fba-Cloud]
       _include:
         - base/virt/kvm
     - _attributes:
         type: image
-        profiles: [Cloud, dasd-cloud]
+        profiles: [Cloud, dasd-cloud, fba-Cloud]
       _include:
         - base/filesystem/xfs
         - base/initial-config/cloud-init
@@ -85,6 +102,7 @@ image:
         type: bootstrap
       _include:
         - base/bootstrap/minimalvm
+        - base/bootstrap/sles
 config:
   - _include:
       - base/suse/minimalvm-s390
