@@ -39,46 +39,46 @@ image:
         arch: x86_64
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - base/opensuse/minimalvm
+        - products/opensuse/minimalvm
     - _attributes:
         profiles: kvm-and-xen
         arch: aarch64
       _include:
         - base/bootloader/grub2/arch/aarch64
-        - base/opensuse/minimalvm
+        - products/opensuse/minimalvm
     - _attributes:
         profiles: VMware
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - base/opensuse/minimalvm
+        - products/opensuse/minimalvm
     - _attributes:
         profiles: Cloud
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - base/opensuse/minimalvm
+        - products/opensuse/minimalvm
     - _attributes:
         profiles: MS-HyperV
         arch: x86_64
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - base/opensuse/minimalvm
+        - products/opensuse/minimalvm
     - _attributes:
         profiles: MS-HyperV
         arch: aarch64
       _include:
         - base/bootloader/grub2/arch/aarch64
-        - base/opensuse/minimalvm
+        - products/opensuse/minimalvm
   packages:
     - _attributes:
         type: image
       _include:
         - base/common
-        - base/opensuse/minimalvm
+        - products/opensuse/minimalvm
     - _attributes:
         type: image
         profiles: [kvm-and-xen,VMware,MS-HyperV]
       _include:
-        - base/filesystems/btrfs
+        - base/filesystem/btrfs
         - base/initial-config/jeos-firstboot
         - base/network/firewalld
     - _attributes:
@@ -107,39 +107,38 @@ image:
         type: image
         profiles: [Cloud]
       _include:
-        - base/filesystems/xfs
+        - base/filesystem/xfs
         - base/initial-config/cloud-init
         - base/virt/kvm
     - _attributes:
         type: bootstrap
       _include:
-        - base/bootstrap/minimalvm
+        - bootstrap/minimalvm
     - _attributes:
         type: bootstrap
         profiles: [kvm-and-xen]
       _include:
-        - base/bootstrap/kvm-and-xen
+        - bootstrap/kvm-and-xen
     - _attributes:
         type: bootstrap
         profiles: [Cloud]
       _include:
-        - base/bootstrap/cloud
+        - bootstrap/cloud
     - _attributes:
         type: bootstrap
         profiles: [MS-HyperV]
       _include:
-        - base/bootstrap/mshyperv
+        - bootstrap/mshyperv
     - _attributes:
         type: bootstrap
         profiles: [VMware]
       _include:
-        - base/bootstrap/vmware
+        - bootstrap/vmware
 config:
   - _include:
-      - base/opensuse/minimalvm
+      - products/opensuse/minimalvm
 #archive:
 #  - name: root.tar.gz
 #    _include:
 #      - csp/gce/settings/sles/byos
 #      - products/sles/byos
-
