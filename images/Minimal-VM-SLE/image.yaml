@@ -1,0 +1,144 @@
+image:
+  _attributes:
+    name: Minimal-VM
+    displayname: "SLES 15 SP5"
+    schemaversion: "7.2"
+  description:
+    _attributes:
+      type: system
+    specification: "SUSE Linux Enterprise 15 SP5 Minimal"
+    author: SUSE LLC
+    contact: crc@suse.com
+  repository:
+    - _attributes:
+        type: rpm-md
+      source:
+        _attributes:
+          path: obsrepositories:/
+  profiles: 
+    profile:
+      - _attributes:
+          name: kvm-and-xen
+          description: Minimal Image for KVM and Xen
+          arch: [aarch64, x86_64]
+      - _attributes:
+          name: VMware
+          description: Minimal Image for VMware
+          arch: x86_64
+      - _attributes:
+          name: MS-HyperV
+          description: Minimal Image for Hyper-V
+          arch: [aarch64, x86_64]
+      - _attributes:
+          name: Cloud
+          description: Minimal Image for Cloud
+          arch: x86_64
+  preferences:
+    - _attributes:
+        profiles: kvm-and-xen
+        arch: x86_64
+      _include:
+        - base/bootloader/grub2/arch/x86_64
+        - products/suse/minimalvm
+    - _attributes:
+        profiles: kvm-and-xen
+        arch: aarch64
+      _include:
+        - base/bootloader/grub2/arch/aarch64
+        - products/suse/minimalvm
+    - _attributes:
+        profiles: VMware
+      _include:
+        - base/bootloader/grub2/arch/x86_64
+        - products/suse/minimalvm
+    - _attributes:
+        profiles: Cloud
+      _include:
+        - base/bootloader/grub2/arch/x86_64
+        - products/suse/minimalvm
+    - _attributes:
+        profiles: MS-HyperV
+        arch: x86_64
+      _include:
+        - base/bootloader/grub2/arch/x86_64
+        - products/suse/minimalvm
+    - _attributes:
+        profiles: MS-HyperV
+        arch: aarch64
+      _include:
+        - base/bootloader/grub2/arch/aarch64
+        - products/suse/minimalvm
+  packages:
+    - _attributes:
+        type: image
+      _include:
+        - base/common
+        - products/suse/minimalvm
+    - _attributes:
+        type: image
+        profiles: [kvm-and-xen,VMware,MS-HyperV]
+      _include:
+        - base/filesystem/btrfs
+        - base/initial-config/jeos-firstboot
+        - base/network/firewalld
+    - _attributes:
+        type: image
+        profiles: [kvm-and-xen,MS-HyperV]
+      _include:
+        - base/network/NetworkManager
+    - _attributes:
+        type: image
+        profiles: [kvm-and-xen,VMware,MS-HyperV,Cloud]
+      _include:
+        - base/secureboot
+    - _attributes:
+        type: image
+        profiles: [kvm-and-xen]
+      _include:
+        - base/virt/kvm
+        - base/virt/xen
+    - _attributes:
+        type: image
+        profiles: [VMware]
+      _include:
+        - base/initial-config/cloud-init
+        - base/virt/vmware
+    - _attributes:
+        type: image
+        profiles: [Cloud]
+      _include:
+        - base/filesystem/xfs
+        - base/initial-config/cloud-init
+        - base/virt/kvm
+    - _attributes:
+        type: bootstrap
+      _include:
+        - bootstrap/minimalvm
+    - _attributes:
+        type: bootstrap
+        profiles: [kvm-and-xen]
+      _include:
+        - bootstrap/kvm-and-xen
+    - _attributes:
+        type: bootstrap
+        profiles: [Cloud]
+      _include:
+        - bootstrap/cloud
+    - _attributes:
+        type: bootstrap
+        profiles: [MS-HyperV]
+      _include:
+        - bootstrap/mshyperv
+    - _attributes:
+        type: bootstrap
+        profiles: [VMware]
+      _include:
+        - bootstrap/vmware
+config:
+  - _include:
+      - products/suse/minimalvm
+#archive:
+#  - name: root.tar.gz
+#    _include:
+#      - csp/gce/settings/sles/byos
+#      - products/sles/byos
