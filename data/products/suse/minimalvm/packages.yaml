@@ -4,3 +4,5 @@ packages:
       - kernel-default-base
       - patterns-base-base
       - patterns-base-apparmor
+      - SUSEConnect
+      - suse-build-key

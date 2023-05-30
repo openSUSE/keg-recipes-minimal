@@ -40,40 +40,40 @@ image:
         profiles: kvm
       _include:
         - base/bootloader/grub2/arch/s390x
-        - base/suse/minimalvm-s390/kvm
+        - products/suse/minimalvm-s390/kvm
     - _attributes:
         profiles: Cloud
       _include:
         - base/bootloader/grub2/arch/s390x
-        - base/suse/minimalvm-s390/cloud
+        - products/suse/minimalvm-s390/cloud
     - _attributes:
         profiles: dasd
       _include:
         - base/bootloader/grub2/arch/s390x
-        - base/suse/minimalvm-s390/dasd
+        - products/suse/minimalvm-s390/dasd
     - _attributes:
         profiles: dasd-Cloud
       _include:
         - base/bootloader/grub2/arch/s390x
-        - base/suse/minimalvm-s390/fba
-        - base/suse/minimalvm-s390/cloud
+        - products/suse/minimalvm-s390/dasd
+        - products/suse/minimalvm-s390/cloud
     - _attributes:
         profiles: fba
       _include:
         - base/bootloader/grub2/arch/s390x
-        - base/suse/minimalvm-s390/dasd
+        - products/suse/minimalvm-s390/fba
     - _attributes:
         profiles: fba-Cloud
       _include:
         - base/bootloader/grub2/arch/s390x
-        - base/suse/minimalvm-s390/fba
-        - base/suse/minimalvm-s390/cloud
+        - products/suse/minimalvm-s390/fba
+        - products/suse/minimalvm-s390/cloud
   packages:
     - _attributes:
         type: image
       _include:
-        - base/suse/common
-        - base/opensuse/minimalvm
+        - base/common
+        - products/suse/minimalvm
     - _attributes:
         type: image
         profiles: [kvm, dasd, fba]
@@ -101,11 +101,11 @@ image:
     - _attributes:
         type: bootstrap
       _include:
-        - base/bootstrap/minimalvm
-        - base/bootstrap/sles
+        - bootstrap/minimalvm
+        - bootstrap/sles
 config:
   - _include:
-      - base/suse/minimalvm-s390
+      - products/suse/minimalvm-s390
 #archive:
 #  - name: root.tar.gz
 #    _include:

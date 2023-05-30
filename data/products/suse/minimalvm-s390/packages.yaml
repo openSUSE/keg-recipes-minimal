@@ -1,6 +1,0 @@
-packages:
-  _namespace_minimal_common:
-    package:
-      - kernel-default-base
-      - patterns-base-base
-      - patterns-base-apparmor
