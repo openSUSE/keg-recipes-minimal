@@ -31,25 +31,25 @@ image:
         arch: x86_64
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - base/suse/ALP/kvm
+        - products/suse/ALP/kvm
     - _attributes:
         profiles: kvm_encrypted
         arch: x86_64
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - base/suse/ALP/kvm_encrypted
+        - products/suse/ALP/kvm_encrypted
     - _attributes:
         profiles: kvm
         arch: aarch64
       _include:
         - base/bootloader/grub2/arch/aarch64
-        - base/suse/ALP/kvm
+        - products/suse/ALP/kvm
     - _attributes:
         profiles: kvm_encrypted
         arch: aarch64
       _include:
         - base/bootloader/grub2/arch/aarch64
-        - base/suse/ALP/kvm_encrypted
+        - products/suse/ALP/kvm_encrypted
   packages:
     - _attributes:
         type: image
@@ -60,16 +60,16 @@ image:
         type: image
         profiles: [kvm]
       _include:
-        - base/suse/ALP/kvm
+        - products/suse/ALP/kvm
     - _attributes:
         type: image
         profiles: [kvm_encrypted]
       _include:
-        - base/suse/ALP/kvm_encrypted
+        - products/suse/ALP/kvm_encrypted
     - _attributes:
         type: bootstrap
       _include:
-        - base/bootstrap/ALP
+        - bootstrap/ALP
     - _attributes:
         type: image
       _include:
@@ -78,10 +78,10 @@ image:
         - base/network/firewalld
         - base/initial-config/microos
         - base/filesystem/btrfs
-        - base/suse/ALP/common
+        - products/suse/ALP/common
 config:
   - _include:
-      - base/suse/ALP
+      - products/suse/ALP
 #archive:
 #  - name: root.tar.gz
 #    _include:
