@@ -1,0 +1,4 @@
+preferences:
+  type:
+    _attributes:
+      kernelcmdline: 'console=ttyS0,115200 console=tty0 security=selinux selinux=1 quiet net.ifnames=0 \$ignition_firstboot ignition.platform.id=metal'
