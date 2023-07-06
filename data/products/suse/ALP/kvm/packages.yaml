@@ -1,4 +1,0 @@
-packages:
-  _namespace_kvm:
-    package:
-      - kernel-default-base

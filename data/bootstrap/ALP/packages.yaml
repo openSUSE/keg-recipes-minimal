@@ -1,11 +1,4 @@
 packages:
   _namespace_bootstrap:
-    _comment: "Avoid that zypper picks the busybox-foo variant for those, that would fail later"
     package:
       - filesystem
-      - glibc-locale-base
-      - ca-certificates-mozilla
-      - ALP-release
-      - awk
-      - coreutils
-      - gzip

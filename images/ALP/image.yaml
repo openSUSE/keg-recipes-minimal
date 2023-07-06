@@ -48,33 +48,13 @@ image:
         profiles: [Default-SelfInstall]
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - products/suse/ALP/kvm
+        - products/suse/ALP/SelfInstall
     - _attributes:
         profiles: [Default-qcow]
       _include:
         - base/bootloader/grub2/arch/x86_64
-        - products/suse/ALP/kvm
+        - products/suse/ALP/qcow
   packages:
-    - _attributes:
-        type: image
-        profiles: [Default-qcow]
-      _include:
-        - base/virt/kvm
-        - products/suse/ALP/kvm
-    - _attributes:
-        type: image
-        profiles: [Default-encrypted]
-      _include:
-        - products/suse/ALP/kvm_encrypted
-    - _attributes:
-        type: image
-        profiles: [Default-SelfInstall]
-      _include:
-        - products/suse/ALP/kvm_encrypted
-    - _attributes:
-        type: bootstrap
-      _include:
-        - bootstrap/ALP
     - _attributes:
         type: image
       _include:
@@ -84,6 +64,27 @@ image:
         - base/initial-config/microos
         - base/filesystem/btrfs
         - products/suse/ALP/common
+    - _attributes:
+        type: image
+        profiles: [Default-qcow]
+      _include:
+        - products/suse/ALP/qcow
+        - base/virt/kvm
+    - _attributes:
+        type: image
+        profiles: [Default-encrypted]
+      _include:
+        - products/suse/ALP/kvm_encrypted
+    - _attributes:
+        type: image
+        profiles: [Default, Default-encrypted, Default-SelfInstall, Default-qcow]
+      _include:
+        - base/kiwi/oem
+        - base/kernel/kernel-default
+    - _attributes:
+        type: bootstrap
+      _include:
+        - bootstrap/ALP
 config:
   - _include:
       - products/suse/ALP

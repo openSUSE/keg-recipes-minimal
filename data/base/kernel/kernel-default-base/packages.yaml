@@ -1,0 +1,4 @@
+packages:
+  _namespace_kernel:
+    package:
+      - "kernel-default-base"

@@ -1,0 +1,6 @@
+preferences:
+  type:
+    _attributes:
+      installiso: "true"
+      installboot: "install"
+      install_continue_on_timeout: "false"

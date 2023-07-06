@@ -1,0 +1,5 @@
+packages:
+  _namespace_kiwi_oem:
+    package:
+      - "dracut-kiwi-oem-dump"
+      - "dracut-kiwi-oem-repart"

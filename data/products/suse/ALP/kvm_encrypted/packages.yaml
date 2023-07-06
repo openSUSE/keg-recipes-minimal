@@ -1,7 +1,6 @@
 packages:
   _namespace_kvm_encrypted:
     package:
-      - kernel-default
       - device-mapper
       - cryptsetup
       - system-user-tss

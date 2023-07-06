@@ -1,0 +1,12 @@
+preferences:
+  type:
+    _attributes:
+      format: "qcow2"
+      spare_part: "5G"
+      spare_part_mountpoint: "/var"
+      spare_part_fs: "btrfs"
+      spare_part_is_last: "true"
+      spare_part_fs_attributes: "no-copy-on-write"
+    oemconfig:
+      oem-resize:
+        _text: "false"

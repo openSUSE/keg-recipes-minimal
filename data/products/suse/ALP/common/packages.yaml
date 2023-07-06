@@ -1,9 +1,14 @@
 packages:
   _namespace_ALP:
     package:
-      - patterns-alp-basesystem
+      - ALP-Micro-release
       - patterns-alp-base-zypper
-      - patterns-alp-selinux
       - patterns-alp-defaults
-      - patterns-alp-cockpit
-      - patterns-alp-container_runtime
+      - patterns-alp-selinux
+      - patterns-alp-salt_minion
+      - podman
+      - suseconnect-ng
+      - grub2-branding-SLE
+      - systemd-presets-branding-ALP
+      - systemd-default-settings-branding-SLE-Micro
+      - k3s-install

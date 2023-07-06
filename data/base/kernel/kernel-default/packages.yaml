@@ -1,0 +1,5 @@
+packages:
+  _namespace_kernel:
+    package:
+      - "kernel-default"
+      - "kernel-firmware-all"
