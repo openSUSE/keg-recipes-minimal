@@ -1,7 +1,7 @@
 preferences:
   version: 1.0.0
   packagemanager: zypper
-  bootloader-theme: openSUSE
+  bootloader-theme: SLE
   rpm-excludedocs: "true"
   type:
     _attributes:

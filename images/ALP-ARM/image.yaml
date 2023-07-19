@@ -6,7 +6,7 @@ image:
   description:
     _attributes:
       type: system
-    specification: "ALP aarch64 Image for rpi"
+    specification: "ALP aarch64 Image for RaspberryPi"
     author: SUSE
     contact: crc@suse.com
   repository:
@@ -17,27 +17,27 @@ image:
           path: obsrepositories:/
   preferences:
     - _include:
-        - base/suse/ALP/common
-        - base/suse/ALP/arm
+        - products/suse/ALP/common
+        - products/suse/ALP/arm
         - base/bootloader/grub2/arch/aarch64
   packages:
     - _attributes:
         type: bootstrap
       _include:
-        - base/bootstrap/ALP
+        - bootstrap/ALP
     - _attributes:
         type: image
       _include:
         - base/common
-        - base/suse/ALP/common
-        - base/suse/ALP/arm
+        - products/suse/ALP/common
+        - products/suse/ALP/arm
         - base/network/NetworkManager
         - base/network/firewalld
         - base/initial-config/microos
         - base/filesystem/btrfs
 config:
   - _include:
-      - base/suse/ALP
+      - products/suse/ALP
 #archive:
 #  - name: root.tar.gz
 #    _include:

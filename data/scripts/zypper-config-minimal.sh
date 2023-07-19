@@ -7,3 +7,8 @@ sed -i 's/.*solver.onlyRequires.*/solver.onlyRequires = true/g' /etc/zypp/zypp.c
 # Disable installing documentation
 #--------------------------------------
 sed -i 's/.*rpm.install.excludedocs.*/rpm.install.excludedocs = yes/g' /etc/zypp/zypp.conf
+
+#======================================
+# Disable any multiversion packages
+#--------------------------------------
+sed -i 's/^multiversion =.*/multiversion =/g' /etc/zypp/zypp.conf

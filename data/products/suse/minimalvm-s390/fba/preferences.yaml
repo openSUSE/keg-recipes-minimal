@@ -3,7 +3,6 @@ preferences:
     _attributes:
       image: oem
       filesystem: btrfs
-      bootloader_console: "serial"
       kernelcmdline: "dasd_mod.dasd=ipldev hvc_iucv=8 TERM=dumb quiet"
       zipl_targettype: "FBA"
       devicepersistency: "by-uuid"

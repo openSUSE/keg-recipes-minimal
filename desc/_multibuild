@@ -1,0 +1,6 @@
+<multibuild>
+    <flavor>Default</flavor>
+    <flavor>Default-encrypted</flavor>
+    <flavor>Default-SelfInstall</flavor>
+    <flavor>Default-qcow</flavor>
+</multibuild>

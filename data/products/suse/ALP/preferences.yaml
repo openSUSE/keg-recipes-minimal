@@ -1,7 +1,8 @@
 preferences:
   version: 0.0.1
   packagemanager: zypper
-  bootloader-theme: openSUSE
+  bootsplash-theme: SLE
+  bootloader-theme: SLE
   rpm-excludedocs: "true"
   locale: en_US
   type:

@@ -6,15 +6,20 @@ config:
       - fonts
       - reset-machine-settings
       - systemd-default-target
+      - cloud-init
       - enable-firstboot-config
-      - sle-micro
+      - etc-overlay
+      - firewall
+      - self-install
       - network-manager
-      - add-yast-repos
-      - ignition
       - selinux
       - snapper-configuration
       - chrony
+      - ca-certificates
       - zypper-config-minimal
+      - alp-zypp-repos
+      - bsc-1212187
+      - bsc-1213490
   services:
     common-services:
       - sshd
